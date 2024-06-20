@@ -27,7 +27,7 @@ section {
   padding: var(--size-3);
   border-radius: var(--default-radius);
   border: var(--border-size-1) solid var(--surface-2);
-  background-color: var(--surface-1);
+  background-color: var(--surface-2);
   overflow: auto;
 
   & h2 {

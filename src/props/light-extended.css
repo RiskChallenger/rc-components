@@ -2,7 +2,7 @@
 .light,
 .light-theme {
   --text-color: oklch(0.11 0.071 269);
-  --surface-0: oklch(0.98 0.01 269);
+  --surface-0: oklch(1 0 0);
   --surface-1: oklch(0.965 0.01 269);
   --surface-2: oklch(0.935 0.015 269);
   --surface-3: oklch(0.89 0.025 269);
