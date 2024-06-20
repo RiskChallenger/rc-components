@@ -1,8 +1,9 @@
 .tabs {
   --border-width: 2px;
+  --background-color: var(--surface-1);
   --active-color: color-mix(
     in srgb,
-    var(--surface-1) 60%,
+    var(--background-color) 30%,
     var(--surface-contrast)
   );
 
@@ -10,6 +11,7 @@
   overflow: auto;
   padding-inline: var(--size-5);
   position: relative;
+  background-color: var(--background-color);
 
   &::before {
     content: "";
@@ -29,7 +31,7 @@
     padding-block: var(--size-relative-2);
     border-radius: var(--default-radius) var(--default-radius) 0 0;
     border: var(--border-width) solid
-      color-mix(in srgb, var(--surface-1) 90%, var(--surface-contrast));
+      color-mix(in srgb, var(--background-color) 70%, var(--surface-contrast));
     border-bottom: 0;
 
     &:not(:first-child) {
@@ -50,9 +52,7 @@
       z-index: 1;
       color: var(--text-1);
       border-color: var(--active-color);
-      background-color: var(
-        --surface-1
-      ); /* This is only necessary to remove the bottom border from active, but makes it ugly on other surfaces */
+      background-color: inherit;
     }
   }
 }
