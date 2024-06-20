@@ -1,5 +1,12 @@
-:where([data-theme="dark"], .dark, .dark-theme) {
-  --surface-0: var(--gray-12);
-  --surface-contrast: var(--gray-0);
-  --text-contrast: var(--gray-9);
+[data-theme="dark"],
+.dark,
+.dark-theme {
+  --text-color: oklch(1 0 0);
+  --surface-0: oklch(0.11 0.071 269);
+  --surface-1: oklch(0.19 0.073 269);
+  --surface-2: oklch(0.26 0.085 269);
+  --surface-3: oklch(0.34 0.09 269);
+  --surface-4: oklch(0.41 0.095 269);
+  --surface-contrast: oklch(0.94 0.015 269);
+  --text-contrast: oklch(0.11 0.071 269);
 }

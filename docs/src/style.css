@@ -5,7 +5,6 @@ body {
   flex-direction: column;
   gap: var(--size-3);
   padding: var(--size-5);
-  font-size: 1rem;
 }
 
 nav {
@@ -21,14 +20,12 @@ nav {
 }
 
 h1 {
-  color: var(--brand);
-  filter: brightness(0.9);
+  color: var(--brand-1);
 }
 
 section {
   padding: var(--size-3);
   border-radius: var(--default-radius);
-  box-shadow: var(--shadow-3);
   border: var(--border-size-1) solid var(--surface-2);
   background-color: var(--surface-1);
   overflow: auto;
@@ -36,15 +33,6 @@ section {
   & h2 {
     margin-block-end: var(--size-5);
   }
-}
-
-[data-color-picker] {
-  display: inline-block;
-  width: 60px;
-  height: 20px;
-  border-radius: var(--radius-6);
-  margin: var(--size-2);
-  cursor: pointer;
 }
 
 .three-columns {
@@ -70,17 +58,9 @@ pre {
   padding: var(--size-relative-2) var(--size-relative-3);
 }
 
-.tab-body {
-  display: none;
+.usage {
+  display: flex;
   flex-direction: column;
-}
-
-#installation,
-#getting-started {
-  gap: var(--size-3);
-}
-
-#usage {
   gap: var(--size-7);
 }
 
@@ -99,5 +79,100 @@ pre {
 @media (prefers-color-scheme: dark) {
   .github-icon path {
     fill: white;
+  }
+}
+
+.dashboard {
+  width: 1920px;
+  aspect-ratio: 16/9;
+  background-color: var(--surface-1);
+  border: 10px solid black;
+  padding: 0;
+
+  nav {
+    background-color: var(--surface-2);
+    padding-block: var(--size-3);
+    padding-inline: var(--size-3);
+    font-size: var(--font-size-3);
+
+    img {
+      height: 100%;
+      max-height: 40px;
+      width: auto;
+    }
+  }
+
+  main {
+    padding-inline: var(--size-7);
+    padding-block: var(--size-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-5);
+    /* align-items: flex-start; */
+
+    h1,
+    h2 {
+      font-size: var(--font-size-5);
+      font-weight: normal;
+      color: var(--text-color);
+    }
+
+    h2 {
+      font-size: var(--font-size-4);
+      margin: 0;
+    }
+  }
+
+  .cards {
+    display: flex;
+    gap: var(--size-7);
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card {
+      width: 400px;
+      height: 250px;
+      padding: var(--size-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-3);
+      border: 3px solid var(--surface-2);
+      border-radius: var(--default-radius);
+
+      &.active {
+        background-color: var(--surface-2);
+      }
+    }
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-2);
+    flex: 1;
+    align-items: flex-start;
+
+    .pill {
+      background-color: var(--surface-3);
+      border-radius: var(--default-radius);
+      padding-block: var(--size-1);
+      padding-inline: var(--size-2);
+    }
+  }
+
+  button {
+    align-self: flex-end;
+  }
+
+  .in-card {
+    background-color: var(--surface-3);
+    padding: var(--size-5);
+
+    .with-pill {
+      background-color: var(--surface-4);
+      border-radius: var(--default-radius);
+      padding-block: var(--size-1);
+      padding-inline: var(--size-2);
+    }
   }
 }

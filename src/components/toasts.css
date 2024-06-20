@@ -1,4 +1,4 @@
-:where(.toast) {
+.toast {
   position: fixed;
   z-index: var(--layer-important);
   bottom: var(--size-5);
@@ -9,7 +9,6 @@
   color: var(--text-contrast);
   padding: var(--size-relative-3) var(--size-relative-4);
   border-radius: var(--default-radius);
-  box-shadow: var(--shadow-3);
   transform: translateX(-50%);
 
   display: flex;
@@ -19,7 +18,8 @@
     slide-up 0.5s var(--ease-3) reverse forwards;
   animation-delay: 0s, 4s;
 
-  & :where(button) {
+  & button {
+    --surface-contrast: var(--surface-0);
     background: transparent;
     color: var(--text-contrast);
     margin-block: calc(-1 * var(--size-relative-2));

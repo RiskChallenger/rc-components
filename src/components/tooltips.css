@@ -1,4 +1,4 @@
-:where([data-tooltip]) {
+[data-tooltip] {
   position: relative;
 
   &:disabled {
@@ -10,8 +10,7 @@
     content: attr(data-tooltip);
     padding: var(--size-relative-1) var(--size-relative-2);
     color: var(--text-1);
-    background-color: var(--surface-1);
-    box-shadow: var(--shadow-3);
+    background-color: color-mix(in srgb, var(--surface-1) 90%, white);
     display: none;
     opacity: 0;
     border-radius: var(--default-radius);

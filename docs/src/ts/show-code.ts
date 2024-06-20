@@ -1,5 +1,5 @@
 export const showCode = () => {
-  document.querySelectorAll("#usage code:empty").forEach((code) => {
+  document.querySelectorAll(".usage code:empty").forEach((code) => {
     let html = code.previousElementSibling;
     if (html instanceof HTMLTemplateElement) {
       html = html.content.firstElementChild;
@@ -11,7 +11,7 @@ export const showCode = () => {
 };
 
 function encodeHTMLEntities(text: string) {
-  let textArea = document.createElement("textarea");
+  const textArea = document.createElement("textarea");
   textArea.innerText = text;
   let encodedOutput = textArea.innerHTML;
   let arr = encodedOutput.split("<br>");

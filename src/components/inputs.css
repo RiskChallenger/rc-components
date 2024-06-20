@@ -1,20 +1,25 @@
-:where(input:not([type="range"]:not[type="button"])) {
+input:not([type="range"], [type="button"]) {
   background-color: var(--surface-0);
-  box-shadow: var(--shadow-2), 0 0 1px 1px var(--surface-3);
   padding-inline: var(--size-relative-3);
   padding-block: var(--size-relative-2);
   border-radius: var(--default-radius);
   transition: outline-width var(--default-animation-time);
-  outline: 0px solid var(--brand);
+  outline: 0px solid var(--surface-1);
   outline-offset: 0;
+  caret-color: var(--surface-contrast);
+  box-shadow: 0 0 1px 1px
+    color-mix(in srgb, var(--surface-0) 80%, var(--surface-contrast));
 
   &:focus-visible {
-    outline-width: var(--border-size-2);
-    outline-color: var(--brand);
+    outline-width: var(--border-size-1);
+    outline-color: color-mix(
+      in srgb,
+      var(--surface-0) 60%,
+      var(--surface-contrast)
+    );
   }
 
   &::placeholder {
-    font-weight: var(--font-weight-5);
     color: var(--text-3);
     opacity: 1;
   }
@@ -22,42 +27,43 @@
   &:disabled {
     cursor: not-allowed;
     background-color: var(--surface-1);
-    border: var(--border-size-1) solid var(--surface-4);
+    border: var(--border-size-1) solid
+      color-mix(in srgb, var(--surface-1) 80%, var(--surface-contrast));
     color: var(--text-3);
   }
 
-  &:where(.invalid) {
-    outline: var(--border-size-1) solid var(--red-9);
+  &.invalid {
+    outline: var(--border-size-1) solid var(--danger-2);
   }
 
   &[type="search"] {
     padding-inline-start: calc(2 * var(--size-relative-2) + 24px);
-    background-image: url("/public/search_icon.svg");
-    background-position: var(--size-relative-2) center;
-    background-size: var(--size-relative-5);
+    background-image: url("/public/search.svg");
+    background-position: var(--size-relative-3) center;
+    background-size: var(--size-relative-3);
   }
 
   &[type="email"] {
     padding-inline-start: calc(2 * var(--size-relative-2) + 24px);
-    background-image: url("/public/email_icon.svg");
-    background-position: var(--size-relative-2) center;
-    background-size: var(--size-relative-5);
+    background-image: url("/public/envelope.svg");
+    background-position: var(--size-relative-3) center;
+    background-size: var(--size-relative-3);
   }
 
   &[type="password"] {
     padding-inline-start: calc(2 * var(--size-relative-2) + 24px);
-    background-image: url("/public/lock_icon.svg");
-    background-position: var(--size-relative-2) center;
-    background-size: var(--size-relative-5);
+    background-image: url("/public/lock.svg");
+    background-position: var(--size-relative-3) center;
+    background-size: var(--size-relative-3);
   }
 
   &[type="text"][list] {
-    background-image: url("/public/chevron_down.svg");
+    background-image: url("/public/chevron-down.svg");
     background-position: calc(100% - 0.5em) center;
-    background-size: var(--size-relative-5);
+    background-size: var(--size-relative-3);
 
     &:focus {
-      background-image: url("/public/chevron_up.svg");
+      background-image: url("/public/chevron-up.svg");
     }
 
     &::-webkit-calendar-picker-indicator {
@@ -74,17 +80,15 @@
   }
 }
 
-:where(input[type="file"])::-webkit-file-upload-button,
-:where(input[type="file"])::file-selector-button {
+input[type="file"]::-webkit-file-upload-button,
+input[type="file"]::file-selector-button {
   padding-inline: var(--size-relative-3);
   padding-block: var(--size-relative-2);
   border-radius: var(--default-radius);
-  box-shadow: var(--shadow-2), 0 0 1px 1px var(--surface-3);
   background-color: var(--surface-1);
   border: var(--border-size-1) solid transparent;
 
   color: var(--text-1);
-  font-weight: var(--font-weight-5);
 
   margin: var(--size-3);
   cursor: pointer;

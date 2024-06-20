@@ -1,20 +1,25 @@
-:where(textarea) {
+textarea {
   background-color: var(--surface-0);
-  box-shadow: var(--shadow-2), 0 0 1px 1px var(--surface-3);
   padding-inline: var(--size-relative-3);
   padding-block: var(--size-relative-2);
   border-radius: var(--default-radius);
   transition: outline-width var(--default-animation-time);
-  outline: 0px solid var(--brand);
+  outline: 0px solid var(--surface-1);
   outline-offset: 0;
+  box-shadow: 0 0 1px 1px
+    color-mix(in srgb, var(--surface-0) 80%, var(--surface-contrast));
+  caret-color: var(--surface-contrast);
 
   &:focus-visible {
-    outline-width: var(--border-size-2);
-    outline-color: var(--brand);
+    outline-width: var(--border-size-1);
+    outline-color: color-mix(
+      in srgb,
+      var(--surface-0) 60%,
+      var(--surface-contrast)
+    );
   }
 
   &::placeholder {
-    font-weight: var(--font-weight-5);
     color: var(--text-3);
     opacity: 1;
   }
@@ -26,7 +31,7 @@
     color: var(--text-3);
   }
 
-  &:where(.invalid) {
-    outline: var(--border-size-1) solid var(--red-9);
+  &.invalid {
+    outline: var(--border-size-1) solid var(--danger-2);
   }
 }

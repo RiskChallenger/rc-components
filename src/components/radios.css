@@ -1,36 +1,44 @@
-:where(.radio) {
+.radio {
   display: inline-block;
   position: relative;
   padding-left: calc(var(--size-relative-5) + var(--size-relative-3));
   cursor: pointer;
 
-  &:hover :where(input:not(:checked)) ~ :where(.checkmark) {
-    background-color: var(--surface-2);
+  &:hover input:not(:checked) ~ .checkmark {
+    background: var(--surface-2);
   }
 
-  & :where(input) {
+  & input {
     position: absolute;
     height: 0;
     width: 0;
     opacity: 0;
 
-    &:checked ~ :where(.checkmark) {
-      background-color: var(--brand);
+    &:checked ~ .checkmark {
+      background: linear-gradient(
+        var(--gradient-angle),
+        var(--brand-1),
+        var(--brand-2)
+      );
 
       &:after {
         transform: translate(-50%, -50%) rotate(45deg) scale(1);
       }
     }
 
-    &:disabled ~ :where(.checkmark) {
+    &:disabled ~ .checkmark {
       cursor: not-allowed;
-      background-color: var(--surface-1);
+      background: var(--surface-1);
       border: var(--border-size-1) solid var(--surface-4);
       color: var(--text-3);
     }
 
-    &:checked:disabled ~ :where(.checkmark) {
-      background-color: var(--brand);
+    &:checked:disabled ~ .checkmark {
+      background: linear-gradient(
+        var(--gradient-angle),
+        var(--brand-1),
+        var(--brand-2)
+      );
 
       &:after {
         border-color: var(--gray-3);
@@ -38,15 +46,16 @@
     }
   }
 
-  & :where(.checkmark) {
+  & .checkmark {
     position: absolute;
     inset: 0;
     height: var(--size-relative-5);
     width: var(--size-relative-5);
     background-color: var(--surface-0);
-    box-shadow: var(--shadow-2), 0 0 1px 1px var(--surface-3);
     border-radius: 50%;
     transition: background-color 300ms ease-in-out;
+    box-shadow: 0 0 1px 1px
+      color-mix(in srgb, var(--surface-0) 80%, var(--surface-contrast));
 
     &:after {
       content: "";

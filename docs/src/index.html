@@ -3,20 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Open Components</title>
+    <title>RC Components</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="./main.ts" type="module"></script>
   </head>
   <body>
     <nav>
-      <h1>Open Components</h1>
+      <h1>RC Components</h1>
+      <h5>Fork of Open Components</h5>
 
       <div class="menu">
-        <button data-theme-switcher class="discrete material-icons">
-          light_mode
-        </button>
+        <button data-theme-switcher class="discrete far fa-sun"></button>
         <a
-          href="https://github.com/RiskChallenger/open-components"
+          href="https://github.com/RiskChallenger/rc-components"
           title="Source on GitHub"
           class="button discrete"
         >
@@ -29,146 +28,63 @@
         </a>
       </div>
     </nav>
-    <section>
-      <h2>Pick your brand color</h2>
-      <span data-color-picker="true" class="gray" data-tooltip="gray"></span>
-      <span data-color-picker="true" class="stone" data-tooltip="stone"></span>
-      <span data-color-picker="true" class="red" data-tooltip="red"></span>
-      <span data-color-picker="true" class="pink" data-tooltip="pink"></span>
-      <span
-        data-color-picker="true"
-        class="purple"
-        data-tooltip="purple"
-      ></span>
-      <span
-        data-color-picker="true"
-        class="violet"
-        data-tooltip="violet"
-      ></span>
-      <span
-        data-color-picker="true"
-        class="indigo"
-        data-tooltip="indigo"
-      ></span>
-      <span data-color-picker="true" class="blue" data-tooltip="blue"></span>
-      <span data-color-picker="true" class="cyan" data-tooltip="cyan"></span>
-      <span data-color-picker="true" class="teal" data-tooltip="teal"></span>
-      <span data-color-picker="true" class="green" data-tooltip="green"></span>
-      <span data-color-picker="true" class="lime" data-tooltip="lime"></span>
-      <span
-        data-color-picker="true"
-        class="yellow"
-        data-tooltip="yellow"
-      ></span>
-      <span
-        data-color-picker="true"
-        class="orange"
-        data-tooltip="orange"
-      ></span>
-      <span data-color-picker="true" class="choco" data-tooltip="choco"></span>
-      <span data-color-picker="true" class="brown" data-tooltip="brown"></span>
-      <span data-color-picker="true" class="sand" data-tooltip="sand"></span>
-      <span data-color-picker="true" class="camo" data-tooltip="camo"></span>
-      <span
-        data-color-picker="true"
-        class="jungle"
-        data-tooltip="jungle"
-      ></span>
-    </section>
 
-    <section>
-      <h2>About</h2>
-      <p>
-        Open Components is a library of components styled with pure CSS. It
-        heavily relies on <a href="https://open-props.style/">Open Props</a>.
-        The design and implementation of the components was done by
-        <a href="https://riskchallenger.nl">RiskChallenger</a>.
-      </p>
-    </section>
-
-    <div class="tabs">
-      <div class="active" data-element-id="installation">Installation</div>
-      <div data-element-id="getting-started">Getting started</div>
-      <div data-element-id="usage">Usage</div>
-    </div>
-
-    <div id="installation" class="tab-body">
-      <h3>Installation</h3>
-      <ol>
-        <li><code>npm i @riskchallenger/open-components</code></li>
-        <li>
-          Import main.css in your application, here are some options depending
-          on your bundler
-          <ol>
-            <li>
-              <code>@import "@riskchallenger/open-components/main.css";</code>
-            </li>
-            <li>
-              <code
-                >@import "npm:@riskchallenger/open-components/main.css";</code
-              >
-            </li>
-            <li>
-              <!-- prettier-ignore -->
-              <code
-                >@import "/node_modules/@riskchallenger/open-components/main.css";</code
-              >
-            </li>
-          </ol>
-        </li>
-        <li>That's it 😄</li>
-      </ol>
-    </div>
-
-    <div id="getting-started" class="tab-body">
-      <h3>Getting started</h3>
-      <h5>Brand color</h5>
-      <p>
-        All you need to do is set a brand color. Hover over the options above to
-        get the color name. Check out the Usage-tab to have a preview of the
-        components in your brands color. These options are from
-        <a href="https://open-props.style/#colors"
-          >the color-scheme on Open Props</a
-        >. However, feel free to use any other color you like.
-      </p>
-
-      <h5>Border radius</h5>
-      <p>
-        If you want a straight corner look, simply set the default border radius
-        to 0. Check the example below
-      </p>
-
-      <h5>Font size</h5>
-      <p>
-        If you want to change the font-size, simply do so as in the below
-        examples.
-      </p>
-
-      <h5>Examples</h5>
-      <p>These are the default values in Open Components.</p>
-      <pre>
-html {
-  --brand: var(--cyan-6);
-  --default-radius: var(--radius-2);
-  --default-font-size: 16px;
-}
-</pre
-      >
-      <p>
-        Here's an example for a pink theme with straight corners and smaller
-        text.
-      </p>
-      <pre>
-html {
-  --brand: var(--pink-6);
-  --default-radius: 0;
-  --default-font-size: 12px;
-}
-</pre
-      >
-    </div>
-
-    <div id="usage" class="tab-body">
+    <div class="usage">
+      <section class="dashboard">
+        <nav>
+          <img
+            src="https://app.riskchallenger.nl/assets/logo_light.svg"
+            alt="RC logo"
+          />
+          Rien
+        </nav>
+        <main>
+          <h1>Dashboard</h1>
+          <input type="search" name="search" placeholder="Zoeken" />
+          <div class="cards">
+            <div class="card active">
+              <h2>Impacttabel opstellen</h2>
+              <div class="pills">
+                <div class="pill">0 categorieën</div>
+                <div class="pill">0 klassen</div>
+              </div>
+              <div class="in-card">
+                <div class="with-pill">Hoi</div>
+              </div>
+              <button>Opstellen</button>
+            </div>
+            <div class="card active">
+              <h2>1. Organisatiestructuur bepalen</h2>
+              <div class="pills">
+                <div class="pill">0 subonderdelen</div>
+                <div class="pill">0 contacten</div>
+              </div>
+              <button>Indelen</button>
+            </div>
+            <div class="card">
+              <h2>2. Inventariseren TBB's</h2>
+              <div class="pills">
+                <div class="pill">0/0 subonderdelen afgerond</div>
+                <div class="pill">0 TBB's geïnventariseerd</div>
+              </div>
+              <button>Inventariseren</button>
+            </div>
+            <div class="card">
+              <h2>3. Categoriseren TBB's</h2>
+              <div class="pills">
+                <div class="pill">Nog wat</div>
+                <div class="pill">Nog wat</div>
+              </div>
+              <button>Categoriseren</button>
+            </div>
+            <div class="card">
+              <h2>4. Resultaten</h2>
+              <div class="pills"></div>
+              <button>Bekijken</button>
+            </div>
+          </div>
+        </main>
+      </section>
       <section>
         <include src="./usage/buttons.html"></include>
       </section>

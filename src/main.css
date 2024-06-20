@@ -3,12 +3,16 @@
 @import "npm:open-props/theme.light.switch.min.css";
 @import "npm:open-props/theme.dark.switch.min.css";
 
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "fontawesome/css/all.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 
 @import "props/variable-sizes.css";
 @import "props/theme-extended.css";
 @import "props/light-extended.css";
 @import "props/dark-extended.css";
+
+@import "components/icons.css";
 
 @import "components/buttons.css";
 @import "components/button-groups.css";
@@ -25,18 +29,25 @@
 @import "components/toasts.css";
 @import "components/scrollbars.css";
 
-:where(html) {
-  --brand: var(--cyan-6);
+html {
+  --brand-1: #00a3ff;
+  --brand-2: #004288;
+  --danger-1: #ff5858;
+  --danger-2: #dd0337;
+  --warning-1: #ffaa33;
+  --warning-2: #ff4d00;
+  --brand: var(--brand-1);
   --default-radius: var(--radius-2);
   --default-animation-time: 300ms;
+  --gradient-angle: 202.5deg;
 
   @media (prefers-reduced-motion: reduce) {
     --default-animation-time: 0s;
   }
 
-  font-family: var(--font-sans);
+  font-family: "Source Sans 3", var(--font-sans);
 }
 
-:where(body) {
+body {
   color: var(--text-1);
 }

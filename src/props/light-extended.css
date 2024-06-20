@@ -1,5 +1,13 @@
-:where([data-theme="light"], .light, .light-theme) {
-  --surface-0: white;
-  --surface-contrast: var(--gray-10);
-  --text-contrast: var(--gray-0);
+[data-theme="light"],
+.light,
+.light-theme {
+  --text-color: oklch(0.11 0.071 269);
+  --surface-0: oklch(0.98 0.01 269);
+  --surface-1: oklch(0.965 0.01 269);
+  --surface-2: oklch(0.935 0.015 269);
+  --surface-3: oklch(0.89 0.025 269);
+  --surface-4: oklch(0.84 0.03 269);
+  --surface-contrast: oklch(0.19 0.073 269);
+  --text-3: oklch(0.64 0.035 269); /* same for light and dark */
+  --text-contrast: oklch(0.98 0.01 269);
 }

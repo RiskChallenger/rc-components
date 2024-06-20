@@ -1,11 +1,12 @@
-:where(.button-group) {
+.button-group {
   display: flex;
 
   & > * {
     border-radius: 0;
 
     &:not(:last-child) {
-      border-right-width: 0;
+      border-right: solid 1px
+        color-mix(in srgb, transparent 80%, var(--surface-contrast));
     }
   }
 

@@ -1,4 +1,3 @@
-import { initColorPicker } from "./ts/color-picker";
 import { initModals } from "./ts/modals";
 import { showCode } from "./ts/show-code";
 import { initTabs } from "./ts/tabs";
@@ -9,7 +8,6 @@ window.onload = () => {
   initModals();
   initToasts();
   initTabs();
-  initColorPicker();
   showCode();
   initThemeSwitcher();
 };

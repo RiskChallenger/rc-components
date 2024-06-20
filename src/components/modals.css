@@ -1,4 +1,4 @@
-:where(.backdrop) {
+.backdrop {
   --animation-time: 500ms;
   --body-padding: var(--size-4) var(--size-6);
 
@@ -14,7 +14,7 @@
   animation: fade-in var(--animation-time) var(--ease-3) forwards;
 }
 
-:where(.modal) {
+.modal {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,8 @@
     border-radius: var(--radius-3);
   }
 
-  & :where(:not(.modal-heading) > h3, .modal-heading) {
+  & > h3,
+  .modal-heading {
     padding: var(--body-padding);
     max-width: 100%;
     border-bottom: 1px solid var(--gray-4);
@@ -47,12 +48,12 @@
     }
   }
 
-  & :where(.modal-body) {
+  & .modal-body {
     padding: var(--body-padding);
     overflow: auto;
   }
 
-  & :where(.modal-footer) {
+  & .modal-footer {
     display: flex;
     gap: var(--size-relative-3);
     justify-content: flex-end;
@@ -61,10 +62,10 @@
   }
 }
 
-:where(.removing) {
+.removing {
   animation: fade-out var(--animation-time) var(--ease-3) forwards;
 
-  & :where(.modal) {
+  & .modal {
     animation: var(--animation-slide-out-up) forwards;
   }
 }

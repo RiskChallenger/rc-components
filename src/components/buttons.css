@@ -1,5 +1,8 @@
-:where(button, .button, input[type="button"]) {
-  --button-color: var(--brand);
+button,
+.button,
+input[type="button"] {
+  --button-color-1: var(--brand-1);
+  --button-color-2: var(--brand-2);
 
   position: relative;
   display: inline-flex;
@@ -7,34 +10,76 @@
   padding-inline: var(--size-relative-3);
   padding-block: var(--size-relative-2);
   border-radius: var(--default-radius);
-  box-shadow: var(--shadow-3);
-  background-color: var(--button-color);
+  background: linear-gradient(
+    var(--gradient-angle),
+    var(--button-color-1),
+    var(--button-color-2)
+  );
   gap: var(--size-relative-2);
-  border: var(--border-size-1) solid transparent;
 
   color: var(--gray-1);
-  font-weight: var(--font-weight-5);
 
   transition-duration: var(--default-animation-time);
 
   &:hover {
-    background-color: color-mix(in srgb, var(--button-color) 80%, white);
+    background: linear-gradient(
+      var(--gradient-angle),
+      color-mix(in srgb, var(--button-color-1) 90%, white),
+      color-mix(in srgb, var(--button-color-2) 90%, white)
+    );
   }
 
   &:active {
-    background-color: color-mix(in srgb, var(--button-color) 70%, white);
+    background: linear-gradient(
+      var(--gradient-angle),
+      color-mix(in srgb, var(--button-color-1) 80%, white),
+      color-mix(in srgb, var(--button-color-2) 80%, white)
+    );
     transition: 0s;
   }
 
   &:disabled {
     pointer-events: none;
-    background-color: color-mix(in srgb, var(--button-color) 60%, white);
+    background: linear-gradient(
+      var(--gradient-angle),
+      color-mix(in srgb, var(--button-color-1) 70%, white),
+      color-mix(in srgb, var(--button-color-2) 70%, white)
+    );
   }
 
-  &.outline {
-    background-color: transparent;
+  &.secondary {
+    background: transparent;
     color: var(--button-color);
-    border-color: var(--button-color);
+    background-color: color-mix(
+      in srgb,
+      transparent 90%,
+      var(--surface-contrast)
+    );
+
+    &:hover {
+      background: color-mix(in srgb, transparent 80%, var(--surface-contrast));
+    }
+
+    &:active {
+      background-color: color-mix(
+        in srgb,
+        transparent 70%,
+        var(--surface-contrast)
+      );
+    }
+
+    &:disabled {
+      background-color: color-mix(
+        in srgb,
+        transparent 60%,
+        var(--surface-contrast)
+      );
+    }
+  }
+
+  &.discrete {
+    background: transparent;
+    color: var(--text-1);
 
     &:hover {
       background-color: color-mix(
@@ -55,44 +100,15 @@
     &:disabled {
       color: var(--text-3);
       background-color: transparent;
-      border-color: var(--surface-4);
     }
   }
 
-  &.discrete {
-    background-color: transparent;
-    color: var(--text-1);
-    border-color: transparent;
-    box-shadow: none;
-
-    &:hover {
-      background-color: color-mix(
-        in srgb,
-        transparent 85%,
-        var(--surface-contrast)
-      );
-    }
-
-    &:active {
-      background-color: color-mix(
-        in srgb,
-        transparent 75%,
-        var(--surface-contrast)
-      );
-    }
-
-    &:disabled {
-      color: var(--text-3);
-      background-color: transparent;
-    }
-  }
-
-  &.material-icons {
+  &:is(.fas, .far, .fal, .fad, .fab) {
     padding-inline: var(--size-2);
     padding-block: var(--size-2);
   }
 
-  & span.material-icons {
+  & span:is(.fas, .far, .fal, .fad, .fab) {
     &.left {
       margin-left: calc(-1 * var(--size-relative-1));
     }
@@ -102,9 +118,11 @@
   }
 
   &.danger {
-    --button-color: var(--red-9);
+    --button-color-1: var(--danger-1);
+    --button-color-2: var(--danger-2);
   }
   &.warning {
-    --button-color: var(--yellow-7);
+    --button-color-1: var(--warning-1);
+    --button-color-2: var(--warning-2);
   }
 }

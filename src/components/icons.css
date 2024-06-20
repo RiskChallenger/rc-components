@@ -1,0 +1,10 @@
+:is(.fas, .far, .fal, .fad, .fab) {
+  &::before {
+    display: grid;
+    place-content: center;
+    width: var(--size-relative-3);
+    height: var(--size-relative-3);
+    margin: var(--size-relative-1);
+    display: inline-block;
+  }
+}
