@@ -3,6 +3,7 @@
   position: relative;
   padding-left: calc(var(--size-relative-5) + var(--size-relative-3));
   cursor: pointer;
+  min-height: var(--size-relative-5);
 
   &:hover input:not(:checked) ~ .checkmark {
     background: var(--surface-2);
