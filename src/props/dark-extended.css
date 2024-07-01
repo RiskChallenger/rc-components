@@ -8,5 +8,6 @@
   --surface-3: oklch(0.34 0.09 269);
   --surface-4: oklch(0.41 0.095 269);
   --surface-contrast: oklch(0.94 0.015 269);
+  --surface-neutral: var(--gray-6);
   --text-contrast: oklch(0.11 0.071 269);
 }

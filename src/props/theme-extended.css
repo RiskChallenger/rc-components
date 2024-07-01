@@ -6,6 +6,7 @@ html {
   --surface-3: oklch(0.89 0.025 269);
   --surface-4: oklch(0.84 0.03 269);
   --surface-contrast: oklch(0.19 0.073 269);
+  --surface-neutral: var(--gray-5);
   --text-3: oklch(0.64 0.035 269); /* same for light and dark */
   --text-contrast: oklch(1 0 0);
 }
@@ -19,6 +20,7 @@ html {
     --surface-3: oklch(0.34 0.09 269);
     --surface-4: oklch(0.41 0.095 269);
     --surface-contrast: oklch(0.965 0.01 269);
+    --surface-neutral: var(--gray-6);
     --text-contrast: oklch(0.11 0.071 269);
   }
 }
